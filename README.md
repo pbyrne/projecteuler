@@ -1,4 +1,6 @@
-projecteuler
-============
+Project Euler Excercises
+========================
 
-Working through Project Euler exercises.
+I'm working through [Project Euler][pe] exercises and showing my work here.
+
+[pe]:https://projecteuler.net/
