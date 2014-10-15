@@ -12,7 +12,7 @@ func main() {
     sum += addIfMultiple(i)
   }
 
-  fmt.Println("\n\nTotal sum is", sum)
+  fmt.Println("Total sum is", sum)
 }
 
 func addIfMultiple(i int) int {
