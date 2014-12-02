@@ -1,19 +1,18 @@
 package main
 
 import (
-  "fmt"
+	"fmt"
 )
 
 func main() {
-  ceiling := 1000
-  sum := 0
+	ceiling := 1000
+	sum := 0
 
-  for i := 0; i < ceiling; i++ {
-    if i % 3 == 0 || i % 5 == 0 {
-      sum += i
-    }
-  }
+	for i := 0; i < ceiling; i++ {
+		if i%3 == 0 || i%5 == 0 {
+			sum += i
+		}
+	}
 
-  fmt.Println("Total sum is", sum)
+	fmt.Println("Total sum is", sum)
 }
-

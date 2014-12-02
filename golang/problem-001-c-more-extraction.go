@@ -1,34 +1,34 @@
 package main
 
 import (
-  "fmt"
+	"fmt"
 )
 
 func main() {
-  ceiling := 1000
-  bases := []int{3,5}
+	ceiling := 1000
+	bases := []int{3, 5}
 
-  sum := sumMultiplesUpTo(ceiling, bases)
+	sum := sumMultiplesUpTo(ceiling, bases)
 
-  fmt.Println("Total sum is", sum)
+	fmt.Println("Total sum is", sum)
 }
 
 func sumMultiplesUpTo(ceiling int, bases []int) int {
-  sum := 0
+	sum := 0
 
-  for i := 0; i < ceiling; i++ {
-    sum += valueIfMultipleOfAny(i, bases)
-  }
+	for i := 0; i < ceiling; i++ {
+		sum += valueIfMultipleOfAny(i, bases)
+	}
 
-  return sum
+	return sum
 }
 
 func valueIfMultipleOfAny(value int, bases []int) int {
-  for _, base := range bases {
-    if value % base == 0 {
-      return value
-    }
-  }
+	for _, base := range bases {
+		if value%base == 0 {
+			return value
+		}
+	}
 
-  return 0
+	return 0
 }

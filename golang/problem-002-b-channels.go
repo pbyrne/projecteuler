@@ -1,40 +1,39 @@
 package main
 
 import (
-  "fmt"
+	"fmt"
 )
 
 func main() {
-  ceiling := 4000000
+	ceiling := 4000000
 
-  sum := sumEvenFibsUpTo(ceiling)
+	sum := sumEvenFibsUpTo(ceiling)
 
-  fmt.Println("Sum of even fibs up to", ceiling, "is", sum)
+	fmt.Println("Sum of even fibs up to", ceiling, "is", sum)
 }
 
 func sumEvenFibsUpTo(ceiling int) int {
-  sum := 0
-  fibs := fibGenerator(ceiling)
+	sum := 0
+	fibs := fibGenerator(ceiling)
 
-  for i := range fibs {
-    if i % 2 == 0 {
-      sum += i
-    }
-  }
+	for i := range fibs {
+		if i%2 == 0 {
+			sum += i
+		}
+	}
 
-  return sum
+	return sum
 }
 
 func fibGenerator(ceiling int) chan int {
-  fibs := make(chan int)
+	fibs := make(chan int)
 
-  go func() {
-    for i, j := 1, 1; i < ceiling; i, j = i+j, i {
-      fibs <- i
-    }
-    close(fibs)
-  }()
+	go func() {
+		for i, j := 1, 1; i < ceiling; i, j = i+j, i {
+			fibs <- i
+		}
+		close(fibs)
+	}()
 
-  return fibs
+	return fibs
 }
-
